@@ -1,0 +1,23 @@
+# Downloaded source data (reproducible via scripts/download_data.py)
+data/raw/*
+!data/raw/.gitkeep
+
+# Local working files and packaged deliverables
+.git/
+work/
+outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
