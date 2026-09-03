@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: python scripts/download_data.py
+      - run: python -m ruff check .
+      - run: python -m pytest
+      - run: python -m src.analysis
+      - uses: actions/upload-artifact@v4
+        with:
+          name: analysis-outputs
+          path: reports/
