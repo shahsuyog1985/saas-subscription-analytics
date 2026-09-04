@@ -15,6 +15,7 @@ __pycache__/
 htmlcov/
 .venv/
 venv/
+.validation_deps/
 
 # Editors / OS
 .DS_Store
