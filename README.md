@@ -38,6 +38,13 @@ utilization is **76.9%**.
 4. Which signup cohorts remain active at the snapshot date?
 5. How effectively are invoices collected?
 
+## Practice the SQL
+
+The repository includes a progressive [20-query SQL practice track](sql/README.md)
+covering joins, conditional aggregation, CTEs, cohort analysis, window functions,
+revenue concentration, and account health modeling. Validation targets are
+provided without giving away the complete solutions.
+
 ## KPI definitions
 
 | KPI | Definition |
