@@ -4,6 +4,33 @@ Use these exercises to practice joins, conditional aggregation, CTEs, window
 functions, cohort analysis, and business interpretation with the project's five
 source tables.
 
+## Runnable SQL files
+
+The scripts use [DuckDB](https://duckdb.org/) so the queries can run directly
+against the downloaded CSV files:
+
+- `00_setup.sql` creates five views over `data/raw/*.csv`.
+- `01_practice.sql` is a clean worksheet containing the 20 prompts.
+- `02_solutions.sql` contains complete reference solutions.
+
+From the repository root, install the development dependencies, download the
+data, and start DuckDB:
+
+```bash
+python -m pip install -r requirements-dev.txt
+python scripts/download_data.py
+python -m duckdb saas_analytics.duckdb
+```
+
+Then, inside DuckDB:
+
+```sql
+.read sql/00_setup.sql
+.read sql/01_practice.sql
+-- Check your work only after attempting the exercises:
+.read sql/02_solutions.sql
+```
+
 ## Schema
 
 | Table | Grain | Useful columns |
@@ -182,4 +209,3 @@ Use these values to check your logic without revealing the complete queries:
 The subscription table records current state rather than historical MRR events.
 It does not support defensible calculations of true NRR, GRR, expansion, or
 contraction. Recognizing that limitation is part of the exercise.
-
